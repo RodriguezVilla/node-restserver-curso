@@ -46,7 +46,7 @@ app.get('/usuario', verificaToken, (req, res) => {
 app.post('/usuario', [verificaToken, verificaAdmin_Role], function(req, res) {
     let body = req.body;
 
-    let usuarioDB = new Usuario({
+    let usuario = new Usuario({
         nombre: body.nombre,
         email: body.email,
         // Passwword plano
